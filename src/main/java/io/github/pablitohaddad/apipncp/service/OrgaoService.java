@@ -37,7 +37,9 @@ public class OrgaoService {
             throw new ResourceNotFoundException("Esse cnpj não tem nenhum contrato em nosso sistema");
         }
         // SALVANDO a nossa entidade
-        orgaoRepository.save(response.getData().get(0).getOrgaoEntidade());
+        Orgao orgao = response.getData().get(0).getOrgaoEntidade();
+        log.info("Id do orgao: " + orgao.getId());
+        orgaoRepository.save(orgao);
 
         // Filtro de contratos
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
