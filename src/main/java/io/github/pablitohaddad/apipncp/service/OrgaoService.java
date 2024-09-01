@@ -36,6 +36,9 @@ public class OrgaoService {
         if (response == null || response.getData().isEmpty() || response.getData() == null){
             throw new ResourceNotFoundException("Esse cnpj não tem nenhum contrato em nosso sistema");
         }
+        // SALVANDO a nossa entidade
+        orgaoRepository.save(response.getData().get(0).getOrgaoEntidade());
+
         // Filtro de contratos
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         LocalDate inicio = LocalDate.parse(dataInicial, formatter);
@@ -46,9 +49,6 @@ public class OrgaoService {
                     return inicioContrato.isAfter(inicio);
                 })
                 .peek(contrato -> { // Com o peek posso fazer operações sem mudar a stream. Nesse caso estou salvando minhas entidades no banco de dados.
-                    Orgao orgaoEntidade = ApiMapper.parseObject(contrato.getOrgaoEntidade(), Orgao.class);
-                    orgaoRepository.save(orgaoEntidade);
-
                     Contrato novoContrato = ApiMapper.parseObject(contrato, Contrato.class);
                     contratoRepository.save(novoContrato);
                 })
