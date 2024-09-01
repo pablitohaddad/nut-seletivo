@@ -55,6 +55,7 @@ public class OrgaoService {
                 .collect(Collectors.toList());// transformo em lista.
 
         response.setData(contratosFiltrados);
+        response.setTotalRegistros(contratosFiltrados.size());
         response.setValorTotal(String.valueOf(calculateTotalValue(contratosFiltrados))); // setando o valor total como String.
         return response;
     }

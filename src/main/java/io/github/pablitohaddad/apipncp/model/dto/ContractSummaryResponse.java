@@ -8,11 +8,11 @@ public class ContractSummaryResponse {
 
     String valorTotal;
 
-    Integer totalRegistros;
+    long totalRegistros;
 
-    public ContractSummaryResponse(){}
 
-    public ContractSummaryResponse(List<ContractResponseDTO> data, String valorTotal, Integer totalRegistros) {
+
+    public ContractSummaryResponse(List<ContractResponseDTO> data, String valorTotal, long totalRegistros) {
         this.data = data;
         this.valorTotal = valorTotal;
         this.totalRegistros = totalRegistros;
@@ -34,11 +34,11 @@ public class ContractSummaryResponse {
         this.valorTotal = valorTotal;
     }
 
-    public Integer getTotalRegistros() {
+    public long getTotalRegistros() {
         return totalRegistros;
     }
 
-    public void setTotalRegistros(Integer totalRegistros) {
+    public void setTotalRegistros(long totalRegistros) {
         this.totalRegistros = totalRegistros;
     }
 
@@ -47,7 +47,7 @@ public class ContractSummaryResponse {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContractSummaryResponse that = (ContractSummaryResponse) o;
-        return Objects.equals(data, that.data) && Objects.equals(valorTotal, that.valorTotal) && Objects.equals(totalRegistros, that.totalRegistros);
+        return totalRegistros == that.totalRegistros && Objects.equals(data, that.data) && Objects.equals(valorTotal, that.valorTotal);
     }
 
     @Override
