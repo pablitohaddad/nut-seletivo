@@ -12,16 +12,15 @@ public class ContractResponseDTO {
     private String dataVigenciaFim;
     private String objetoContrato;
     private String valorInicial;
+    private String nomeRazaoSocialFornecedor;
 
-    public ContractResponseDTO(Orgao orgaoEntidade, String dataVigenciaInicio, String dataVigenciaFim, String objetoContrato, String valorInicial) {
+    public ContractResponseDTO(Orgao orgaoEntidade, String dataVigenciaInicio, String dataVigenciaFim, String objetoContrato, String valorInicial, String nomeRazaoSocialFornecedor) {
         this.orgaoEntidade = orgaoEntidade;
         this.dataVigenciaInicio = dataVigenciaInicio;
         this.dataVigenciaFim = dataVigenciaFim;
         this.objetoContrato = objetoContrato;
         this.valorInicial = valorInicial;
-    }
-
-    public ContractResponseDTO() {
+        this.nomeRazaoSocialFornecedor = nomeRazaoSocialFornecedor;
     }
 
     public Orgao getOrgaoEntidade() {
@@ -64,16 +63,24 @@ public class ContractResponseDTO {
         this.valorInicial = valorInicial;
     }
 
+    public String getNomeRazaoSocialFornecedor() {
+        return nomeRazaoSocialFornecedor;
+    }
+
+    public void setNomeRazaoSocialFornecedor(String nomeRazaoSocialFornecedor) {
+        this.nomeRazaoSocialFornecedor = nomeRazaoSocialFornecedor;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContractResponseDTO that = (ContractResponseDTO) o;
-        return Objects.equals(orgaoEntidade, that.orgaoEntidade) && Objects.equals(dataVigenciaInicio, that.dataVigenciaInicio) && Objects.equals(dataVigenciaFim, that.dataVigenciaFim) && Objects.equals(objetoContrato, that.objetoContrato) && Objects.equals(valorInicial, that.valorInicial);
+        return Objects.equals(orgaoEntidade, that.orgaoEntidade) && Objects.equals(dataVigenciaInicio, that.dataVigenciaInicio) && Objects.equals(dataVigenciaFim, that.dataVigenciaFim) && Objects.equals(objetoContrato, that.objetoContrato) && Objects.equals(valorInicial, that.valorInicial) && Objects.equals(nomeRazaoSocialFornecedor, that.nomeRazaoSocialFornecedor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orgaoEntidade, dataVigenciaInicio, dataVigenciaFim, objetoContrato, valorInicial);
+        return Objects.hash(orgaoEntidade, dataVigenciaInicio, dataVigenciaFim, objetoContrato, valorInicial, nomeRazaoSocialFornecedor);
     }
 }

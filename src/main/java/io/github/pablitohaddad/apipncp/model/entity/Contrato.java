@@ -24,28 +24,19 @@ public class Contrato {
     @Column(name = "valor_inicial", nullable = false)
     private String valorInicial;
 
-    public Contrato(Long id, String dataVigenciaInicio, String dataVigenciaFim, String objetoContrato, String valorInicial) {
+    @Column(name = "nom_razao_social_fornecedor", nullable = false)
+    private String nomeRazaoSocialFornecedor;
+
+    public Contrato(){
+
+    }
+    public Contrato(Long id, String dataVigenciaInicio, String dataVigenciaFim, String objetoContrato, String valorInicial, String nomeRazaoSocialFornecedor) {
         this.id = id;
         this.dataVigenciaInicio = dataVigenciaInicio;
         this.dataVigenciaFim = dataVigenciaFim;
         this.objetoContrato = objetoContrato;
         this.valorInicial = valorInicial;
-    }
-
-    public Contrato() {
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Contrato contrato = (Contrato) o;
-        return Objects.equals(id, contrato.id) && Objects.equals(dataVigenciaInicio, contrato.dataVigenciaInicio) && Objects.equals(dataVigenciaFim, contrato.dataVigenciaFim) && Objects.equals(objetoContrato, contrato.objetoContrato) && Objects.equals(valorInicial, contrato.valorInicial);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, dataVigenciaInicio, dataVigenciaFim, objetoContrato, valorInicial);
+        this.nomeRazaoSocialFornecedor = nomeRazaoSocialFornecedor;
     }
 
     public Long getId() {
@@ -86,5 +77,26 @@ public class Contrato {
 
     public void setValorInicial(String valorInicial) {
         this.valorInicial = valorInicial;
+    }
+
+    public String getNomeRazaoSocialFornecedor() {
+        return nomeRazaoSocialFornecedor;
+    }
+
+    public void setNomeRazaoSocialFornecedor(String nomeRazaoSocialFornecedor) {
+        this.nomeRazaoSocialFornecedor = nomeRazaoSocialFornecedor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Contrato contrato = (Contrato) o;
+        return Objects.equals(id, contrato.id) && Objects.equals(dataVigenciaInicio, contrato.dataVigenciaInicio) && Objects.equals(dataVigenciaFim, contrato.dataVigenciaFim) && Objects.equals(objetoContrato, contrato.objetoContrato) && Objects.equals(valorInicial, contrato.valorInicial) && Objects.equals(nomeRazaoSocialFornecedor, contrato.nomeRazaoSocialFornecedor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, dataVigenciaInicio, dataVigenciaFim, objetoContrato, valorInicial, nomeRazaoSocialFornecedor);
     }
 }

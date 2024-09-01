@@ -8,12 +8,14 @@ public class ContractSummaryResponse {
 
     String valorTotal;
 
-    public ContractSummaryResponse(List<ContractResponseDTO> data, String valorTotal) {
+    Integer totalRegistros;
+
+    public ContractSummaryResponse(){}
+
+    public ContractSummaryResponse(List<ContractResponseDTO> data, String valorTotal, Integer totalRegistros) {
         this.data = data;
         this.valorTotal = valorTotal;
-    }
-
-    public ContractSummaryResponse() {
+        this.totalRegistros = totalRegistros;
     }
 
     public List<ContractResponseDTO> getData() {
@@ -32,16 +34,24 @@ public class ContractSummaryResponse {
         this.valorTotal = valorTotal;
     }
 
+    public Integer getTotalRegistros() {
+        return totalRegistros;
+    }
+
+    public void setTotalRegistros(Integer totalRegistros) {
+        this.totalRegistros = totalRegistros;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContractSummaryResponse that = (ContractSummaryResponse) o;
-        return Objects.equals(data, that.data) && Objects.equals(valorTotal, that.valorTotal);
+        return Objects.equals(data, that.data) && Objects.equals(valorTotal, that.valorTotal) && Objects.equals(totalRegistros, that.totalRegistros);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, valorTotal);
+        return Objects.hash(data, valorTotal, totalRegistros);
     }
 }
