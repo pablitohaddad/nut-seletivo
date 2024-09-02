@@ -1,10 +1,12 @@
 # Consumo de API da PNCP
 
-Olá, bem-vindo(a) a API que consome os dados da PNCP. Desenvolvida em Java com Spring Boot, essa API gera dados de contratos realizado por órgãos e armazena em um banco de dados MySQL. Utilizei tecnologias como Docker, Git, ModelMapper, Spring MVC e Railway para deploy, dentre outras.
+Olá, bem-vindo(a) a API que consome os dados da PNCP. Desenvolvida em Java com Spring Boot, essa API gera dados de contratos realizado por órgãos e armazena em um banco de dados MySQL. Utilizei tecnologias como Docker, Spring MVC, OpenAPI (Swagger), OpenFeign, ModelMapper, MySql, Spring JPA e JDBC Railway para deploy, dentre outras.
 
 # Visão Geral
 
 1. Esse projeto é o back-end da aplicação, o front-end está localizado no repositório: [REPO-FRONT-END](https://github.com/pablitohaddad/nuti-seletivo-front-end)
+
+2. Se você quer ver a documentação do projeto, ela está localizada nesse link: DOC-BACK-END
 
 2. Não é necessário rodar localmente tanto o back-end, quando o front-end, estarei dispobibilizando tutoriais para fazer isso. Acesse o repositório do front-end para testar a aplicação online (O link estará lá). 
 
