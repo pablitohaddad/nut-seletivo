@@ -6,7 +6,7 @@ Olá, bem-vindo(a) a API que consome os dados da PNCP. Desenvolvida em Java com 
 
 1. Esse projeto é o back-end da aplicação, o front-end está localizado no repositório: [REPO-FRONT-END](https://github.com/pablitohaddad/nuti-seletivo-front-end)
 
-2. Se você quer ver a documentação do projeto, ela está localizada nesse link: DOC-BACK-END
+2. Se você quer ver a documentação do projeto, ela está localizada nesse link: [DOC-BACK-END](https://nuti-seletivo-back-end-production.up.railway.app/swagger-ui/index.html)
 
 2. Não é necessário rodar localmente tanto o back-end, quando o front-end, estarei dispobibilizando tutoriais para fazer isso. Acesse o repositório do front-end para testar a aplicação online (O link estará lá). 
 
